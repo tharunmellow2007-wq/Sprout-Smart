@@ -1,0 +1,302 @@
+# SproutSmart - Installation & Setup Guide
+
+## 📋 Prerequisites
+
+Before installing SproutSmart, ensure you have the following installed:
+
+- **Python 3.8+** (Recommended: Python 3.9 or 3.10)
+- **pip** (Python package manager)
+- **Git** (for version control)
+- **CUDA** (Optional, for GPU acceleration)
+- **Android Studio** (for mobile app development)
+
+## 🚀 Quick Start
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/sproutsmart.git
+cd sproutsmart
+```
+
+### 2. Create Virtual Environment
+
+**On Linux/Mac:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+**On Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### 3. Install Dependencies
+
+**Basic Installation:**
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+**For GPU Support (NVIDIA CUDA):**
+```bash
+pip install tensorflow-gpu==2.15.0
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
+
+### 4. Download Required Models & Data
+
+```bash
+# Download pre-trained MobileNetV2 weights
+python scripts/download_models.py
+
+# Download NLTK data for NLP
+python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
+
+# Download spaCy language model
+python -m spacy download en_core_web_sm
+```
+
+### 5. Configure Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+# OpenWeatherMap API
+WEATHER_API_KEY=your_openweathermap_api_key_here
+
+# Google Cloud (for Drive integration)
+GOOGLE_CLOUD_PROJECT=your_project_id
+GOOGLE_APPLICATION_CREDENTIALS=path/to/credentials.json
+
+# Model Configuration
+MODEL_PATH=models/
+UPLOAD_FOLDER=uploads/
+MAX_FILE_SIZE=10485760  # 10MB
+
+# Flask Configuration
+FLASK_ENV=development
+FLASK_DEBUG=True
+SECRET_KEY=your_secret_key_here
+
+# Database (Optional)
+DATABASE_URL=sqlite:///sproutsmart.db
+```
+
+### 6. Run Tests
+
+```bash
+pytest tests/ -v
+```
+
+## 📦 Installation by Component
+
+### Core AI Components
+
+```bash
+# TensorFlow & Keras (for CNN)
+pip install tensorflow==2.15.0 keras==2.15.0
+
+# PyTorch (for advanced models)
+pip install torch==2.1.0 torchvision==0.16.0
+
+# Computer Vision
+pip install opencv-python==4.8.1.78 Pillow==10.1.0
+```
+
+### Machine Learning Tools
+
+```bash
+# Decision Trees & Hoeffding Tree
+pip install river==0.19.0 scikit-learn==1.3.2
+
+# Data Processing
+pip install numpy==1.24.3 pandas==2.1.3
+```
+
+### NLP Components
+
+```bash
+# Natural Language Processing
+pip install nltk==3.8.1 spacy==3.7.2
+python -m spacy download en_core_web_sm
+
+# For multi-language support
+python -m spacy download es_core_news_sm  # Spanish
+python -m spacy download hi_core_news_sm  # Hindi
+```
+
+### API & Weather Integration
+
+```bash
+# Weather API
+pip install requests==2.31.0 pyowm==3.3.0
+
+# Web Framework
+pip install flask==3.0.0 flask-cors==4.0.0
+```
+
+## 🖥️ Google Colab Setup
+
+For training models in Google Colab:
+
+```python
+# Mount Google Drive
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Install requirements
+!pip install -r requirements.txt
+
+# Set up GPU
+import tensorflow as tf
+print("GPU Available:", tf.config.list_physical_devices('GPU'))
+```
+
+## 📱 Android Development Setup
+
+### Install Android Studio
+
+1. Download Android Studio from official website
+2. Install Android SDK and NDK
+3. Set up Android emulator or connect physical device
+
+### Configure Buildozer (for Python to Android)
+
+```bash
+pip install buildozer cython
+pip install kivy==2.2.1
+pip install python-for-android
+
+# Initialize buildozer
+buildozer init
+```
+
+### Build APK
+
+```bash
+buildozer -v android debug
+```
+
+## 🔧 Troubleshooting
+
+### TensorFlow Installation Issues
+
+**On Mac with Apple Silicon (M1/M2):**
+```bash
+pip install tensorflow-macos==2.15.0
+pip install tensorflow-metal==1.1.0
+```
+
+**CUDA/GPU Issues:**
+```bash
+# Verify CUDA installation
+nvidia-smi
+
+# Install compatible versions
+pip install tensorflow-gpu==2.15.0
+```
+
+### OpenCV Issues
+
+**On Linux:**
+```bash
+sudo apt-get update
+sudo apt-get install python3-opencv
+pip install opencv-python-headless==4.8.1.78
+```
+
+**On Mac:**
+```bash
+brew install opencv
+pip install opencv-python==4.8.1.78
+```
+
+### Memory Issues During Training
+
+Add to your training script:
+```python
+# Limit GPU memory growth
+import tensorflow as tf
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+    for gpu in gpus:
+        tf.config.experimental.set_memory_growth(gpu, True)
+```
+
+## 🔍 Verify Installation
+
+Run the verification script:
+
+```bash
+python verify_installation.py
+```
+
+This will check:
+- ✅ Python version
+- ✅ All required packages
+- ✅ GPU availability
+- ✅ API connections
+- ✅ Model files
+
+## 📚 Additional Resources
+
+### Model Training
+
+```bash
+# Train waste classification model
+python train_cnn.py --epochs 50 --batch-size 32
+
+# Train cGAN for restructuring
+python train_cgan.py --epochs 100
+
+# Fine-tune Hoeffding Tree
+python train_recommendation.py
+```
+
+### API Server
+
+```bash
+# Start Flask development server
+python app.py
+
+# Start with Gunicorn (production)
+gunicorn -w 4 -b 0.0.0.0:8000 app:app
+```
+
+## 🐳 Docker Setup (Optional)
+
+```bash
+# Build Docker image
+docker build -t sproutsmart:latest .
+
+# Run container
+docker run -p 5000:5000 -e WEATHER_API_KEY=your_key sproutsmart:latest
+```
+
+## 📝 Notes
+
+- **Python Version**: Ensure you're using Python 3.8 or higher
+- **Virtual Environment**: Always use a virtual environment to avoid conflicts
+- **API Keys**: Never commit your API keys to version control
+- **Model Files**: Large model files should be stored using Git LFS or cloud storage
+- **Updates**: Regularly update dependencies for security patches
+
+## 🆘 Getting Help
+
+If you encounter issues:
+
+1. Check the [Issues](https://github.com/your-username/sproutsmart/issues) page
+2. Review the [Documentation](https://github.com/your-username/sproutsmart/wiki)
+3. Contact the team: Tharun M - 8667642113
+
+## 📄 License
+
+This project is created by Team InnoVFour for sustainable urban farming.
+
+---
+
+**Happy Farming! 🌱**
