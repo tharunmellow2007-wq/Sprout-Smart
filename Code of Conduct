@@ -1,0 +1,182 @@
+# Code of Conduct
+
+## Our Pledge
+
+In the interest of fostering an open and welcoming environment, we as contributors and maintainers of SproutSmart pledge to make participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+
+We are committed to providing a friendly, safe, and welcoming environment for all, especially for those who are new to open source or sustainable farming.
+
+## Our Standards
+
+### Positive Behavior
+
+Examples of behavior that contributes to creating a positive environment include:
+
+* 🌱 **Being welcoming and inclusive** - Using language that welcomes all contributors
+* 🤝 **Being respectful** - Respecting differing viewpoints and experiences
+* 💚 **Being supportive** - Gracefully accepting constructive criticism
+* 🎯 **Focusing on community** - Prioritizing what is best for the community
+* ❤️ **Showing empathy** - Being kind and empathetic towards other community members
+* 📚 **Helping others learn** - Patiently teaching and sharing knowledge
+* 🌍 **Environmental consciousness** - Promoting sustainable practices
+* 🙏 **Giving credit** - Acknowledging others' contributions and ideas
+
+### Unacceptable Behavior
+
+Examples of unacceptable behavior include:
+
+* ❌ Using sexualized language or imagery, and unwelcome sexual attention or advances
+* ❌ Trolling, insulting/derogatory comments, and personal or political attacks
+* ❌ Public or private harassment of any kind
+* ❌ Publishing others' private information without explicit permission
+* ❌ Dismissing or attacking inclusion-focused requests
+* ❌ Sustained disruption of discussions or events
+* ❌ Pattern of inappropriate social contact
+* ❌ Other conduct which could reasonably be considered inappropriate in a professional setting
+
+## Our Responsibilities
+
+### Project Maintainers
+
+Project maintainers are responsible for:
+
+- Clarifying the standards of acceptable behavior
+- Taking appropriate and fair corrective action in response to unacceptable behavior
+- Removing, editing, or rejecting comments, commits, code, wiki edits, issues, and other contributions that violate this Code of Conduct
+- Temporarily or permanently banning contributors for behaviors deemed inappropriate, threatening, offensive, or harmful
+
+### Community Members
+
+Community members are responsible for:
+
+- Reading and understanding this Code of Conduct
+- Reporting violations to the project team
+- Respecting the decisions of project maintainers
+- Helping create a welcoming environment for all
+
+## Scope
+
+This Code of Conduct applies within all project spaces, including:
+
+- GitHub repository (code, issues, pull requests, discussions)
+- Project communication channels (email, chat, forums)
+- Social media accounts representing the project
+- Project events (virtual or in-person)
+- Any public space where you represent SproutSmart
+
+It also applies when representing the project in public spaces, such as using an official project email address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+
+## Enforcement
+
+### Reporting
+
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by:
+
+**Primary Contact:**
+- Email: [team email address]
+- GitHub: Open a confidential issue with tag `code-of-conduct`
+
+**Team Contacts:**
+- Tharun M: [contact info]
+- Sabari D: [contact info]
+- Samjeshuran V: [contact info]
+- Vishnu Priya K: [contact info]
+
+All complaints will be reviewed and investigated promptly and fairly. The project team is obligated to maintain confidentiality with regard to the reporter of an incident.
+
+### Response Process
+
+1. **Acknowledgment** - We will acknowledge receipt of the report within 24 hours
+2. **Investigation** - We will investigate the complaint thoroughly
+3. **Decision** - The project team will determine appropriate action
+4. **Communication** - We will communicate the decision to relevant parties
+5. **Follow-up** - We will monitor the situation to ensure compliance
+
+### Enforcement Guidelines
+
+Project maintainers will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+
+#### 1. Correction
+
+**Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome.
+
+**Consequence**: A private, written warning from project maintainers, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+
+#### 2. Warning
+
+**Community Impact**: A violation through a single incident or series of actions.
+
+**Consequence**: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
+
+#### 3. Temporary Ban
+
+**Community Impact**: A serious violation of community standards, including sustained inappropriate behavior.
+
+**Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
+
+#### 4. Permanent Ban
+
+**Community Impact**: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
+
+**Consequence**: A permanent ban from any sort of public interaction within the community.
+
+## Specific Guidelines for SproutSmart Community
+
+### Technical Discussions
+
+- **Be patient** - Remember that not everyone has the same level of technical expertise
+- **Stay constructive** - Focus on the code and ideas, not the person
+- **Explain clearly** - Provide context and reasoning for your suggestions
+- **Welcome questions** - No question is too basic or "stupid"
+
+### Farming & Sustainability Topics
+
+- **Respect diverse practices** - Different regions have different farming methods
+- **Be evidence-based** - Support claims with credible sources when possible
+- **Acknowledge limitations** - Organic methods may not work for everyone
+- **Stay humble** - Traditional knowledge is as valuable as scientific knowledge
+
+### Cultural Sensitivity
+
+- **Respect language barriers** - Be patient with non-native English speakers
+- **Welcome diversity** - Our community includes people from many cultures
+- **Be mindful of context** - What's appropriate in one culture may not be in another
+- **Ask, don't assume** - If unsure about something, ask respectfully
+
+## Attribution
+
+This Code of Conduct is adapted from:
+- [Contributor Covenant](https://www.contributor-covenant.org), version 2.1
+- [Django Code of Conduct](https://www.djangoproject.com/conduct/)
+- [Rust Code of Conduct](https://www.rust-lang.org/policies/code-of-conduct)
+
+## Updates to this Code
+
+We may revise this Code of Conduct from time to time. The most current version will always be available at this location. We will notify the community of any significant changes.
+
+**Last Updated**: February 7, 2025
+
+## Questions?
+
+If you have questions about this Code of Conduct, please contact the project team through the channels listed above.
+
+---
+
+## Our Commitment
+
+We are committed to making SproutSmart a welcoming, inclusive, and sustainable community where:
+
+🌱 Everyone feels safe to contribute  
+🤝 Collaboration thrives  
+💚 Diversity is celebrated  
+📚 Learning is encouraged  
+🌍 Sustainability is promoted  
+
+Thank you for helping make SproutSmart a positive space for everyone!
+
+---
+
+**Team InnoVFour**  
+Dr. N.G.P. Institute of Technology  
+
+_Growing together, sustainably_ 🌱
