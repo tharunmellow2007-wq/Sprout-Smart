@@ -1,0 +1,375 @@
+# Contributing to SproutSmart 🌱
+
+First off, thank you for considering contributing to SproutSmart! It's people like you that make SproutSmart such a great tool for sustainable urban farming.
+
+## 🌟 How Can I Contribute?
+
+### Reporting Bugs
+
+Before creating bug reports, please check the existing issues to avoid duplicates. When you create a bug report, include as many details as possible:
+
+**Bug Report Template:**
+```markdown
+**Describe the bug**
+A clear description of what the bug is.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '...'
+3. See error
+
+**Expected behavior**
+What you expected to happen.
+
+**Screenshots**
+If applicable, add screenshots.
+
+**Environment:**
+ - Device: [e.g. Android Phone, iPhone]
+ - OS: [e.g. Android 12, iOS 15]
+ - App Version: [e.g. 1.0.0]
+ - Python Version: [e.g. 3.9]
+
+**Additional context**
+Any other context about the problem.
+```
+
+### Suggesting Enhancements
+
+Enhancement suggestions are tracked as GitHub issues. When creating an enhancement suggestion, include:
+
+- **Clear title and description** of the suggested enhancement
+- **Step-by-step description** of the suggested enhancement with as many details as possible
+- **Explain why this enhancement would be useful** to most SproutSmart users
+- **List some examples** of how this enhancement would be used
+
+### Pull Requests
+
+1. **Fork the repository** and create your branch from `main`
+2. **Make your changes** following our coding standards
+3. **Test your changes** thoroughly
+4. **Update documentation** if needed
+5. **Submit a pull request** with a clear description
+
+## 🔧 Development Setup
+
+### Prerequisites
+- Python 3.8+
+- Git
+- Virtual environment tool
+
+### Setup Steps
+
+```bash
+# Clone your fork
+git clone https://github.com/your-username/sproutsmart.git
+cd sproutsmart
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+pip install -r requirements-dev.txt  # Development dependencies
+
+# Run tests
+pytest tests/
+```
+
+## 📝 Coding Standards
+
+### Python Style Guide
+
+We follow PEP 8 with some modifications:
+
+```python
+# Good
+def classify_waste_material(image_path, model):
+    """
+    Classify waste material from uploaded image.
+    
+    Args:
+        image_path (str): Path to the image file
+        model: Pre-trained CNN model
+        
+    Returns:
+        dict: Classification results with confidence scores
+    """
+    # Implementation here
+    pass
+
+# Use meaningful variable names
+waste_type = "plastic_bottle"
+confidence_score = 0.95
+
+# Add comments for complex logic
+# Calculate size based on pixel dimensions and assumed distance
+estimated_size = calculate_dimensions(image_data)
+```
+
+### Code Formatting
+
+We use **Black** for code formatting:
+
+```bash
+# Format your code
+black src/
+
+# Check formatting
+black --check src/
+```
+
+### Linting
+
+We use **Flake8** for linting:
+
+```bash
+# Run linter
+flake8 src/ --max-line-length=100
+```
+
+### Type Hints
+
+Use type hints where possible:
+
+```python
+from typing import List, Dict, Optional
+
+def get_plant_recommendations(
+    waste_size: float,
+    climate: str,
+    region: str
+) -> List[Dict[str, any]]:
+    """Get plant recommendations based on parameters."""
+    pass
+```
+
+## 🧪 Testing Guidelines
+
+### Writing Tests
+
+```python
+import pytest
+from src.models import WasteClassifier
+
+def test_waste_classification():
+    """Test waste material classification."""
+    classifier = WasteClassifier()
+    result = classifier.classify("test_images/bottle.jpg")
+    
+    assert result['category'] == 'plastic_bottle'
+    assert result['confidence'] > 0.8
+
+def test_plant_recommendation():
+    """Test plant recommendation engine."""
+    # Test implementation
+    pass
+```
+
+### Running Tests
+
+```bash
+# Run all tests
+pytest
+
+# Run specific test file
+pytest tests/test_classifier.py
+
+# Run with coverage
+pytest --cov=src tests/
+```
+
+## 🌿 Areas We Need Help With
+
+### High Priority
+- 🔍 **Waste Classification**: Improve CNN model accuracy
+- 🌱 **Plant Database**: Expand regional plant recommendations
+- 🌐 **Multi-language Support**: Add translations for local languages
+- 📱 **Mobile UI/UX**: Enhance Android app interface
+
+### Medium Priority
+- 📊 **Data Collection**: Gather more training data for models
+- 🐛 **Bug Fixes**: Address issues in the issue tracker
+- 📖 **Documentation**: Improve code documentation and guides
+- 🎨 **Design**: Create better UI/UX designs
+
+### Ideas & Features
+- 🤝 **Community Features**: User forums, sharing gardens
+- 📈 **Analytics Dashboard**: Track farming progress
+- 🔔 **Smart Notifications**: Weather-based reminders
+- 🎥 **Tutorial Videos**: Step-by-step video guides
+
+## 📚 Documentation
+
+### Code Documentation
+
+Use clear docstrings:
+
+```python
+def generate_farming_structure(waste_type: str, farming_method: str) -> dict:
+    """
+    Generate farming structure design based on waste and method.
+    
+    This function uses cGAN to create practical designs for different
+    farming methods (soil-based, hydroponics, aeroponics) using the
+    provided waste material.
+    
+    Args:
+        waste_type (str): Type of waste material (e.g., 'plastic_bottle')
+        farming_method (str): Farming method ('soil', 'hydro', 'aero')
+        
+    Returns:
+        dict: Structure design with dimensions and instructions
+        
+    Raises:
+        ValueError: If waste_type or farming_method is invalid
+        
+    Example:
+        >>> design = generate_farming_structure('plastic_bottle', 'hydro')
+        >>> print(design['instructions'])
+    """
+    pass
+```
+
+### README Updates
+
+If you add new features, update the README with:
+- Feature description
+- Usage examples
+- Screenshots (if applicable)
+
+## 🎯 Commit Message Guidelines
+
+### Format
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+### Types
+- **feat**: New feature
+- **fix**: Bug fix
+- **docs**: Documentation changes
+- **style**: Code style changes (formatting, etc.)
+- **refactor**: Code refactoring
+- **test**: Adding or updating tests
+- **chore**: Maintenance tasks
+
+### Examples
+
+```bash
+feat(classifier): add support for glass waste classification
+
+- Added glass material detection to CNN model
+- Updated training dataset with 500 glass images
+- Improved overall accuracy to 94%
+
+Closes #123
+
+---
+
+fix(weather): resolve API timeout issues
+
+- Increased timeout to 10 seconds
+- Added retry logic with exponential backoff
+- Improved error handling
+
+Fixes #456
+```
+
+## 🔄 Pull Request Process
+
+1. **Update Documentation**: Ensure README, INSTALLATION, or other docs are updated
+2. **Add Tests**: Include tests for new features
+3. **Pass All Checks**: Ensure all tests and linting pass
+4. **Update CHANGELOG**: Add entry describing your changes
+5. **Request Review**: Tag relevant team members for review
+6. **Address Feedback**: Make requested changes promptly
+
+### PR Title Format
+
+```
+[Type] Brief description of changes
+```
+
+Examples:
+- `[Feature] Add voice command support for plant selection`
+- `[Fix] Resolve image upload crash on Android 11`
+- `[Docs] Update installation guide with Mac M1 instructions`
+
+## 🏆 Recognition
+
+Contributors will be:
+- Listed in our CONTRIBUTORS.md file
+- Mentioned in release notes
+- Credited in the app's About section (for significant contributions)
+
+## 📞 Getting Help
+
+- **Questions?** Open a GitHub discussion
+- **Stuck?** Comment on the issue you're working on
+- **Ideas?** Share them in discussions or issues
+
+## 📋 Development Workflow
+
+```bash
+# 1. Create feature branch
+git checkout -b feature/add-voice-support
+
+# 2. Make changes and commit
+git add .
+git commit -m "feat(voice): add voice command recognition"
+
+# 3. Keep your branch updated
+git fetch origin
+git rebase origin/main
+
+# 4. Push changes
+git push origin feature/add-voice-support
+
+# 5. Create pull request on GitHub
+```
+
+## 🌍 Community
+
+Join our community:
+- **GitHub Discussions**: Ask questions and share ideas
+- **Issue Tracker**: Report bugs and request features
+- **Email**: Contact team at [team email]
+
+## 📜 Code of Conduct
+
+### Our Pledge
+
+We pledge to make participation in our project a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+
+### Our Standards
+
+**Positive behavior:**
+- Using welcoming and inclusive language
+- Being respectful of differing viewpoints
+- Gracefully accepting constructive criticism
+- Focusing on what is best for the community
+- Showing empathy towards others
+
+**Unacceptable behavior:**
+- Harassment, trolling, or insulting comments
+- Publishing others' private information
+- Other conduct which could reasonably be considered inappropriate
+
+## 🙏 Thank You!
+
+Your contributions help make sustainable urban farming accessible to everyone. Every pull request, bug report, and suggestion helps grow SproutSmart! 🌱
+
+---
+
+**Happy Contributing!**
+
+Team InnoVFour
+Dr. N.G.P. Institute of Technology
