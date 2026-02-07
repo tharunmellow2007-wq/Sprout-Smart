@@ -1,0 +1,38 @@
+# SproutSmart - Core Requirements (Minimal Installation)
+# For basic functionality and testing
+
+# Core Deep Learning
+tensorflow==2.15.0
+torch==2.1.0
+torchvision==0.16.0
+
+# Computer Vision
+opencv-python==4.8.1.78
+Pillow==10.1.0
+
+# Machine Learning Essentials
+scikit-learn==1.3.2
+numpy==1.24.3
+pandas==2.1.3
+
+# Pre-trained Models
+timm==0.9.12
+
+# Decision Trees (Hoeffding Tree)
+river==0.19.0
+
+# NLP Basics
+nltk==3.8.1
+
+# API & Weather
+requests==2.31.0
+pyowm==3.3.0
+python-dotenv==1.0.0
+
+# Web Framework
+flask==3.0.0
+flask-cors==4.0.0
+
+# Utilities
+tqdm==4.66.1
+matplotlib==3.8.2
