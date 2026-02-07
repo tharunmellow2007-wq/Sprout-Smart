@@ -1,0 +1,167 @@
+# SproutSmart - Development Requirements
+# Additional dependencies for development, testing, and debugging
+
+# All production dependencies
+-r requirements.txt
+
+# ============================================
+# Testing Frameworks
+# ============================================
+pytest==7.4.3
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+pytest-asyncio==0.21.1
+pytest-xdist==3.5.0  # Parallel testing
+coverage==7.3.2
+faker==20.1.0  # Generate fake data for testing
+
+# ============================================
+# Code Quality & Linting
+# ============================================
+black==23.11.0  # Code formatting
+flake8==6.1.0  # Linting
+pylint==3.0.3  # Code analysis
+mypy==1.7.1  # Type checking
+isort==5.12.0  # Import sorting
+autopep8==2.0.4  # Auto-formatting
+bandit==1.7.5  # Security linting
+
+# ============================================
+# Documentation
+# ============================================
+sphinx==7.2.6  # Documentation generator
+sphinx-rtd-theme==2.0.0  # ReadTheDocs theme
+sphinx-autodoc-typehints==1.25.2
+mkdocs==1.5.3  # Alternative documentation
+mkdocs-material==9.5.3
+pdoc3==0.10.0  # Auto API documentation
+
+# ============================================
+# Debugging Tools
+# ============================================
+ipdb==0.13.13  # IPython debugger
+pdbpp==0.10.3  # Enhanced pdb
+py-spy==0.3.14  # Performance profiler
+memory-profiler==0.61.0  # Memory profiling
+line-profiler==4.1.1  # Line-by-line profiling
+
+# ============================================
+# Jupyter & Notebooks
+# ============================================
+jupyter==1.0.0
+jupyterlab==4.0.9
+notebook==7.0.6
+ipykernel==6.27.1
+ipywidgets==8.1.1
+nbconvert==7.12.0
+
+# ============================================
+# API Development & Testing
+# ============================================
+httpx==0.25.2  # HTTP client
+requests-mock==1.11.0  # Mock requests
+responses==0.24.1  # Mock API responses
+flask-testing==0.8.1  # Flask testing utilities
+flask-debugtoolbar==0.13.1  # Debug toolbar
+
+# ============================================
+# Database Tools
+# ============================================
+alembic==1.13.0  # Database migrations
+sqlalchemy-utils==0.41.1  # SQLAlchemy helpers
+factory-boy==3.3.0  # Test fixtures
+
+# ============================================
+# Development Utilities
+# ============================================
+python-dotenv==1.0.0  # Environment variables
+watchdog==3.0.0  # File system monitoring
+colorama==0.4.6  # Colored terminal output
+rich==13.7.0  # Rich terminal formatting
+click==8.1.7  # CLI framework
+pre-commit==3.6.0  # Git hooks
+
+# ============================================
+# Performance & Monitoring
+# ============================================
+locust==2.20.0  # Load testing
+pytest-benchmark==4.0.0  # Benchmark tests
+snakeviz==2.2.0  # Profile visualizer
+
+# ============================================
+# Data Validation & Serialization
+# ============================================
+marshmallow==3.20.1  # Object serialization
+pydantic[email]==2.5.2  # Enhanced validation
+cerberus==1.3.5  # Data validation
+
+# ============================================
+# Mocking & Fixtures
+# ============================================
+mimesis==12.1.0  # Fake data generator
+factory-boy==3.3.0  # Factory for test data
+
+# ============================================
+# Security & Secrets Management
+# ============================================
+python-decouple==3.8  # Settings management
+cryptography==41.0.7  # Encryption utilities
+
+# ============================================
+# Version Control & Release
+# ============================================
+gitpython==3.1.40  # Git interface
+bump2version==1.0.1  # Version management
+twine==4.0.2  # PyPI publishing
+
+# ============================================
+# Static Analysis
+# ============================================
+radon==6.0.1  # Code complexity
+vulture==2.10  # Dead code detection
+pydocstyle==6.3.0  # Docstring checker
+interrogate==1.5.0  # Docstring coverage
+
+# ============================================
+# Environment Management
+# ============================================
+pipenv==2023.11.15
+virtualenv==20.25.0
+tox==4.11.4  # Test automation
+
+# ============================================
+# Container Development
+# ============================================
+docker==7.0.0  # Docker SDK
+docker-compose==1.29.2
+
+# ============================================
+# Android Development Support
+# ============================================
+kivy==2.2.1  # Python for Android
+buildozer==1.5.0  # Android packaging
+python-for-android==2023.11.26
+cython==3.0.6  # Required for buildozer
+
+# ============================================
+# Machine Learning Development
+# ============================================
+tensorboard==2.15.1  # Model visualization
+wandb==0.16.0  # Experiment tracking
+mlflow==2.9.2  # ML lifecycle management
+optuna==3.4.0  # Hyperparameter optimization
+scikit-optimize==0.9.0  # Bayesian optimization
+
+# ============================================
+# Notebook Extensions
+# ============================================
+jupyter-contrib-nbextensions==0.7.0
+jupyter-nbextensions-configurator==0.6.3
+jupyterlab-git==0.50.0
+
+# ============================================
+# Additional Testing Tools
+# ============================================
+hypothesis==6.92.1  # Property-based testing
+tox==4.11.4  # Test automation
+nox==2023.4.22  # Task automation
