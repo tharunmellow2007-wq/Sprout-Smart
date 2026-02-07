@@ -1,0 +1,577 @@
+# SproutSmart API Documentation
+
+## Base URL
+```
+Development: http://localhost:5000/api/v1
+Production: https://api.sproutsmart.com/api/v1
+```
+
+## Authentication
+Currently, the API is open for testing. Authentication will be implemented in future versions.
+
+---
+
+## 📋 Table of Contents
+
+1. [Waste Classification](#waste-classification)
+2. [Plant Recommendations](#plant-recommendations)
+3. [Weather Information](#weather-information)
+4. [Farming Structures](#farming-structures)
+5. [Manure Guides](#manure-guides)
+6. [Pest Control](#pest-control)
+7. [Error Handling](#error-handling)
+
+---
+
+## Waste Classification
+
+### Upload and Classify Waste Image
+
+**Endpoint:** `POST /classify/upload`
+
+**Description:** Upload an image of waste material to get classification and size estimation.
+
+**Request:**
+```http
+POST /api/v1/classify/upload
+Content-Type: multipart/form-data
+
+{
+  "image": <file>,
+  "user_location": "Chennai, India" (optional)
+}
+```
+
+**cURL Example:**
+```bash
+curl -X POST \
+  http://localhost:5000/api/v1/classify/upload \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'image=@/path/to/waste_image.jpg' \
+  -F 'user_location=Chennai, India'
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "data": {
+    "classification": {
+      "category": "plastic_bottle",
+      "subcategory": "PET_bottle",
+      "confidence": 0.96,
+      "alternative_predictions": [
+        {
+          "category": "plastic_container",
+          "confidence": 0.03
+        }
+      ]
+    },
+    "dimensions": {
+      "estimated_volume": "500ml",
+      "estimated_height": "20cm",
+      "estimated_diameter": "6cm",
+      "usable_area": "medium"
+    },
+    "suitability": {
+      "soil_based": true,
+      "hydroponics": true,
+      "aeroponics": true,
+      "container_gardening": true
+    },
+    "image_id": "img_abc123xyz",
+    "timestamp": "2025-02-07T10:30:00Z"
+  }
+}
+```
+
+**Status Codes:**
+- `200` - Success
+- `400` - Invalid image format or missing file
+- `413` - File too large (max 10MB)
+- `500` - Server error
+
+---
+
+## Plant Recommendations
+
+### Get Plant Recommendations
+
+**Endpoint:** `POST /recommendations/plants`
+
+**Description:** Get personalized plant recommendations based on waste type, climate, and location.
+
+**Request:**
+```http
+POST /api/v1/recommendations/plants
+Content-Type: application/json
+
+{
+  "image_id": "img_abc123xyz",
+  "location": {
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "country": "India",
+    "latitude": 13.0827,
+    "longitude": 80.2707
+  },
+  "preferences": {
+    "plant_type": ["herbs", "vegetables"],
+    "difficulty_level": "beginner",
+    "harvest_time": "fast"
+  }
+}
+```
+
+**cURL Example:**
+```bash
+curl -X POST \
+  http://localhost:5000/api/v1/recommendations/plants \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "image_id": "img_abc123xyz",
+    "location": {
+      "city": "Chennai",
+      "country": "India"
+    }
+  }'
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "data": {
+    "recommendations": [
+      {
+        "plant_id": "herb_001",
+        "name": "Basil",
+        "scientific_name": "Ocimum basilicum",
+        "type": "herb",
+        "difficulty": "beginner",
+        "match_score": 0.95,
+        "reasons": [
+          "Suitable for your climate",
+          "Fits container size",
+          "Low maintenance"
+        ],
+        "growth_info": {
+          "days_to_harvest": "30-45",
+          "sunlight_required": "6-8 hours",
+          "water_frequency": "daily",
+          "space_required": "small"
+        },
+        "benefits": [
+          "Culinary use",
+          "Natural pest repellent",
+          "Air purifying"
+        ]
+      },
+      {
+        "plant_id": "veg_012",
+        "name": "Cherry Tomatoes",
+        "scientific_name": "Solanum lycopersicum var. cerasiforme",
+        "type": "vegetable",
+        "difficulty": "intermediate",
+        "match_score": 0.88,
+        "reasons": [
+          "Suitable for container gardening",
+          "Good for hydroponic setup"
+        ],
+        "growth_info": {
+          "days_to_harvest": "60-80",
+          "sunlight_required": "8-10 hours",
+          "water_frequency": "regular",
+          "space_required": "medium"
+        }
+      }
+    ],
+    "total_recommendations": 2,
+    "climate_info": {
+      "zone": "tropical",
+      "season": "summer",
+      "current_temp": "32°C"
+    }
+  }
+}
+```
+
+---
+
+## Weather Information
+
+### Get Current Weather
+
+**Endpoint:** `GET /weather/current`
+
+**Description:** Get current weather information for farming decisions.
+
+**Request:**
+```http
+GET /api/v1/weather/current?lat=13.0827&lon=80.2707
+```
+
+**cURL Example:**
+```bash
+curl -X GET \
+  'http://localhost:5000/api/v1/weather/current?lat=13.0827&lon=80.2707'
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "data": {
+    "location": {
+      "city": "Chennai",
+      "country": "India",
+      "coordinates": {
+        "latitude": 13.0827,
+        "longitude": 80.2707
+      }
+    },
+    "current": {
+      "temperature": 32,
+      "feels_like": 35,
+      "humidity": 70,
+      "weather": "Partly Cloudy",
+      "wind_speed": 15,
+      "uv_index": 8
+    },
+    "farming_advice": {
+      "water_plants": true,
+      "outdoor_planting": "suitable",
+      "warnings": [
+        "High UV - protect sensitive plants"
+      ]
+    },
+    "forecast_3day": [
+      {
+        "date": "2025-02-08",
+        "temp_max": 33,
+        "temp_min": 25,
+        "precipitation": 20,
+        "weather": "Scattered Showers"
+      }
+    ],
+    "timestamp": "2025-02-07T10:30:00Z"
+  }
+}
+```
+
+---
+
+## Farming Structures
+
+### Get Structure Designs
+
+**Endpoint:** `POST /structures/generate`
+
+**Description:** Generate farming structure designs based on waste material.
+
+**Request:**
+```http
+POST /api/v1/structures/generate
+Content-Type: application/json
+
+{
+  "image_id": "img_abc123xyz",
+  "farming_method": "hydroponics",
+  "preferences": {
+    "difficulty": "beginner",
+    "budget": "low"
+  }
+}
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "data": {
+    "designs": [
+      {
+        "design_id": "struct_001",
+        "name": "Simple Bottle Hydroponic System",
+        "method": "hydroponics",
+        "difficulty": "beginner",
+        "estimated_cost": "₹0 (using waste)",
+        "setup_time": "30 minutes",
+        "materials_needed": [
+          "1 plastic bottle (provided)",
+          "Growing medium (coco peat)",
+          "Nutrient solution"
+        ],
+        "instructions": [
+          {
+            "step": 1,
+            "title": "Prepare the bottle",
+            "description": "Cut the bottle in half horizontally",
+            "image_url": "/assets/instructions/hydro_step1.jpg"
+          },
+          {
+            "step": 2,
+            "title": "Create reservoir",
+            "description": "Fill bottom half with nutrient solution",
+            "image_url": "/assets/instructions/hydro_step2.jpg"
+          }
+        ],
+        "capacity": "1-2 plants",
+        "maintenance": "Low",
+        "image_url": "/assets/designs/hydro_bottle_001.jpg"
+      }
+    ],
+    "total_designs": 3
+  }
+}
+```
+
+---
+
+## Manure Guides
+
+### Get Liquid Manure Recipe
+
+**Endpoint:** `GET /guides/manure`
+
+**Description:** Get liquid manure preparation guide using kitchen scraps.
+
+**Request:**
+```http
+GET /api/v1/guides/manure?ingredient=tea_powder
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "data": {
+    "recipes": [
+      {
+        "recipe_id": "manure_001",
+        "name": "Tea Powder Liquid Manure",
+        "ingredients": [
+          {
+            "item": "Used tea powder",
+            "quantity": "1 tablespoon",
+            "source": "kitchen_scrap"
+          },
+          {
+            "item": "Water",
+            "quantity": "1 liter"
+          }
+        ],
+        "preparation": [
+          {
+            "step": 1,
+            "instruction": "Add used tea powder to container"
+          },
+          {
+            "step": 2,
+            "instruction": "Pour 1 liter water"
+          },
+          {
+            "step": 3,
+            "instruction": "Close lid and let it ferment for 3-5 days"
+          }
+        ],
+        "fermentation_time": "3-5 days",
+        "shelf_life": "2 weeks",
+        "application": {
+          "dilution_ratio": "1:10 (manure:water)",
+          "frequency": "Once every 2 weeks",
+          "suitable_for": ["all plants"]
+        },
+        "market_equivalent": "₹500/liter",
+        "cost_savings": "100%",
+        "npk_content": {
+          "nitrogen": "moderate",
+          "phosphorus": "low",
+          "potassium": "moderate"
+        }
+      }
+    ]
+  }
+}
+```
+
+---
+
+## Pest Control
+
+### Get Organic Pesticide Recipe
+
+**Endpoint:** `GET /guides/pest-control`
+
+**Description:** Get organic pesticide preparation guide.
+
+**Request:**
+```http
+GET /api/v1/guides/pest-control?pest_type=aphids
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "data": {
+    "solutions": [
+      {
+        "solution_id": "pest_001",
+        "name": "Neem and Garlic Spray",
+        "effective_against": ["aphids", "whiteflies", "mites"],
+        "ingredients": [
+          {
+            "item": "Neem leaves",
+            "quantity": "1 handful",
+            "source": "kitchen_scrap"
+          },
+          {
+            "item": "Garlic cloves",
+            "quantity": "5-6 cloves",
+            "source": "kitchen_scrap"
+          },
+          {
+            "item": "Water",
+            "quantity": "1 liter"
+          }
+        ],
+        "preparation": [
+          {
+            "step": 1,
+            "instruction": "Crush garlic cloves and neem leaves"
+          },
+          {
+            "step": 2,
+            "instruction": "Mix with water and let sit overnight"
+          },
+          {
+            "step": 3,
+            "instruction": "Strain and transfer to spray bottle"
+          }
+        ],
+        "application": {
+          "frequency": "Once every 3 days",
+          "time_of_day": "Early morning or evening",
+          "coverage": "Spray on affected leaves"
+        },
+        "safety": {
+          "organic": true,
+          "safe_for_consumption": "Wait 24 hours before harvest",
+          "storage": "Use within 3 days"
+        }
+      }
+    ]
+  }
+}
+```
+
+---
+
+## Error Handling
+
+### Error Response Format
+
+All errors follow this format:
+
+```json
+{
+  "status": "error",
+  "error": {
+    "code": "ERROR_CODE",
+    "message": "Human readable error message",
+    "details": "Additional context (optional)"
+  },
+  "timestamp": "2025-02-07T10:30:00Z"
+}
+```
+
+### Common Error Codes
+
+| Code | HTTP Status | Description |
+|------|-------------|-------------|
+| `INVALID_IMAGE` | 400 | Invalid image format or corrupted file |
+| `IMAGE_TOO_LARGE` | 413 | Image exceeds 10MB limit |
+| `MISSING_PARAMETERS` | 400 | Required parameters missing |
+| `CLASSIFICATION_FAILED` | 500 | AI model failed to classify |
+| `WEATHER_API_ERROR` | 503 | Weather service unavailable |
+| `LOCATION_NOT_FOUND` | 404 | Location coordinates invalid |
+| `RATE_LIMIT_EXCEEDED` | 429 | Too many requests |
+
+---
+
+## Rate Limiting
+
+- **Free Tier**: 100 requests per hour
+- **Response Header**: `X-RateLimit-Remaining`
+
+---
+
+## SDK Examples
+
+### Python SDK
+
+```python
+from sproutsmart import SproutSmartClient
+
+# Initialize client
+client = SproutSmartClient(api_key="your_api_key")
+
+# Upload and classify
+result = client.classify_waste(
+    image_path="waste_bottle.jpg",
+    location="Chennai, India"
+)
+
+# Get recommendations
+plants = client.get_plant_recommendations(
+    image_id=result.image_id,
+    location={"city": "Chennai", "country": "India"}
+)
+
+# Get weather
+weather = client.get_weather(lat=13.0827, lon=80.2707)
+```
+
+### JavaScript SDK
+
+```javascript
+import SproutSmart from 'sproutsmart-js';
+
+const client = new SproutSmart({ apiKey: 'your_api_key' });
+
+// Upload and classify
+const result = await client.classifyWaste({
+  image: file,
+  location: 'Chennai, India'
+});
+
+// Get recommendations
+const plants = await client.getPlantRecommendations({
+  imageId: result.imageId,
+  location: { city: 'Chennai', country: 'India' }
+});
+```
+
+---
+
+## Webhooks (Coming Soon)
+
+Subscribe to events:
+- `classification.completed`
+- `recommendation.generated`
+- `weather.alert`
+
+---
+
+## Support
+
+- **Documentation**: https://docs.sproutsmart.com
+- **GitHub Issues**: https://github.com/your-username/sproutsmart/issues
+- **Email**: support@sproutsmart.com
+
+---
+
+**Version**: 1.0.0  
+**Last Updated**: February 7, 2025  
+**Team InnoVFour** - Dr. N.G.P. Institute of Technology
