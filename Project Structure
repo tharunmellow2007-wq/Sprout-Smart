@@ -1,0 +1,270 @@
+# SproutSmart - Project Structure
+
+```
+sproutsmart/
+│
+├── 📱 android/                          # Android mobile application
+│   ├── app/
+│   │   ├── src/
+│   │   │   ├── main/
+│   │   │   │   ├── java/com/sproutsmart/
+│   │   │   │   │   ├── MainActivity.java
+│   │   │   │   │   ├── CameraActivity.java
+│   │   │   │   │   ├── ResultsActivity.java
+│   │   │   │   │   └── utils/
+│   │   │   │   ├── res/              # Resources (layouts, images)
+│   │   │   │   └── AndroidManifest.xml
+│   │   └── build.gradle
+│   └── gradle/
+│
+├── 🧠 src/                              # Source code
+│   ├── models/                          # AI/ML Models
+│   │   ├── __init__.py
+│   │   ├── waste_classifier.py         # CNN-based waste classification
+│   │   ├── structure_generator.py      # cGAN for design generation
+│   │   ├── plant_recommender.py        # Hoeffding tree recommendations
+│   │   └── weather_predictor.py        # Weather-based predictions
+│   │
+│   ├── preprocessing/                   # Data preprocessing
+│   │   ├── __init__.py
+│   │   ├── image_processing.py         # Image preprocessing pipeline
+│   │   ├── data_augmentation.py        # Data augmentation techniques
+│   │   └── feature_extraction.py       # Feature extraction methods
+│   │
+│   ├── api/                             # API endpoints
+│   │   ├── __init__.py
+│   │   ├── app.py                      # Flask application
+│   │   ├── routes.py                   # API routes
+│   │   ├── controllers/                # Request handlers
+│   │   │   ├── upload_controller.py
+│   │   │   ├── classify_controller.py
+│   │   │   └── recommend_controller.py
+│   │   └── middleware/                 # Middleware functions
+│   │       ├── auth.py
+│   │       └── validation.py
+│   │
+│   ├── services/                        # Business logic
+│   │   ├── __init__.py
+│   │   ├── weather_service.py          # Weather API integration
+│   │   ├── recommendation_service.py   # Plant recommendation logic
+│   │   └── storage_service.py          # File storage management
+│   │
+│   ├── utils/                           # Utility functions
+│   │   ├── __init__.py
+│   │   ├── config.py                   # Configuration management
+│   │   ├── logger.py                   # Logging utilities
+│   │   ├── validators.py               # Input validation
+│   │   └── helpers.py                  # Helper functions
+│   │
+│   └── database/                        # Database models and operations
+│       ├── __init__.py
+│       ├── models.py                   # Database models
+│       ├── migrations/                 # Database migrations
+│       └── seed.py                     # Seed data
+│
+├── 🧪 tests/                            # Test files
+│   ├── __init__.py
+│   ├── test_classifier.py              # Classifier tests
+│   ├── test_recommender.py             # Recommender tests
+│   ├── test_api.py                     # API endpoint tests
+│   ├── test_preprocessing.py           # Preprocessing tests
+│   ├── fixtures/                       # Test fixtures
+│   │   ├── sample_images/
+│   │   └── mock_data.py
+│   └── conftest.py                     # Pytest configuration
+│
+├── 🎓 notebooks/                        # Jupyter notebooks
+│   ├── 01_data_exploration.ipynb       # Data analysis
+│   ├── 02_model_training.ipynb         # Model training
+│   ├── 03_model_evaluation.ipynb       # Model evaluation
+│   ├── 04_cgan_experiments.ipynb       # cGAN experiments
+│   └── 05_recommendation_tuning.ipynb  # Recommendation tuning
+│
+├── 📊 data/                             # Data files
+│   ├── raw/                            # Raw data
+│   │   ├── waste_images/
+│   │   ├── plant_database.csv
+│   │   └── climate_data.json
+│   ├── processed/                      # Processed data
+│   │   ├── training/
+│   │   ├── validation/
+│   │   └── test/
+│   └── external/                       # External datasets
+│       └── weather_historical.csv
+│
+├── 🤖 models/                           # Trained model files
+│   ├── waste_classifier/
+│   │   ├── mobilenet_v2.h5
+│   │   ├── model_config.json
+│   │   └── class_indices.json
+│   ├── structure_generator/
+│   │   ├── generator.pth
+│   │   ├── discriminator.pth
+│   │   └── training_config.json
+│   └── plant_recommender/
+│       ├── hoeffding_tree.pkl
+│       └── feature_mapping.json
+│
+├── 🎨 assets/                           # Static assets
+│   ├── images/
+│   │   ├── logo.png
+│   │   ├── icons/
+│   │   └── samples/
+│   ├── fonts/
+│   └── styles/
+│
+├── 📖 docs/                             # Documentation
+│   ├── api/
+│   │   ├── endpoints.md                # API documentation
+│   │   └── examples.md                 # API examples
+│   ├── architecture/
+│   │   ├── system_design.md
+│   │   └── data_flow.md
+│   ├── user_guide/
+│   │   ├── getting_started.md
+│   │   ├── features.md
+│   │   └── faq.md
+│   ├── developer_guide/
+│   │   ├── setup.md
+│   │   ├── contributing.md
+│   │   └── testing.md
+│   └── images/                         # Documentation images
+│
+├── 🔧 scripts/                          # Utility scripts
+│   ├── train_model.py                  # Model training script
+│   ├── evaluate_model.py               # Model evaluation script
+│   ├── download_models.py              # Download pre-trained models
+│   ├── preprocess_data.py              # Data preprocessing script
+│   ├── migrate_db.py                   # Database migration
+│   ├── clear_cache.py                  # Clear cache utility
+│   └── setup_dev.sh                    # Development environment setup
+│
+├── 🐳 docker/                           # Docker configurations
+│   ├── Dockerfile                      # Main Dockerfile
+│   ├── Dockerfile.dev                  # Development Dockerfile
+│   ├── docker-compose.yml              # Docker Compose configuration
+│   └── .dockerignore                   # Docker ignore file
+│
+├── ☁️ deployment/                       # Deployment configurations
+│   ├── kubernetes/                     # Kubernetes configs
+│   │   ├── deployment.yaml
+│   │   ├── service.yaml
+│   │   └── ingress.yaml
+│   ├── terraform/                      # Infrastructure as Code
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   └── scripts/
+│       ├── deploy.sh
+│       └── rollback.sh
+│
+├── 🔐 config/                           # Configuration files
+│   ├── development.py                  # Development config
+│   ├── production.py                   # Production config
+│   ├── testing.py                      # Testing config
+│   └── logging.yaml                    # Logging configuration
+│
+├── 📝 .github/                          # GitHub specific files
+│   ├── workflows/                      # GitHub Actions
+│   │   ├── ci.yml                      # Continuous Integration
+│   │   ├── cd.yml                      # Continuous Deployment
+│   │   └── tests.yml                   # Automated testing
+│   ├── ISSUE_TEMPLATE/                 # Issue templates
+│   │   ├── bug_report.md
+│   │   └── feature_request.md
+│   └── PULL_REQUEST_TEMPLATE.md        # PR template
+│
+├── 📄 Root Files
+│   ├── .gitignore                      # Git ignore file
+│   ├── .env.example                    # Environment variables example
+│   ├── README.md                       # Project README
+│   ├── LICENSE                         # Project license
+│   ├── CONTRIBUTING.md                 # Contribution guidelines
+│   ├── CODE_OF_CONDUCT.md              # Code of conduct
+│   ├── CHANGELOG.md                    # Version history
+│   ├── INSTALLATION.md                 # Installation guide
+│   ├── requirements.txt                # Python dependencies
+│   ├── requirements-minimal.txt        # Minimal dependencies
+│   ├── requirements-dev.txt            # Development dependencies
+│   ├── setup.py                        # Package setup file
+│   ├── pyproject.toml                  # Python project metadata
+│   ├── pytest.ini                      # Pytest configuration
+│   ├── .flake8                         # Flake8 configuration
+│   ├── .pylintrc                       # Pylint configuration
+│   └── Makefile                        # Make commands
+│
+└── 📦 Other Directories
+    ├── logs/                           # Application logs
+    ├── uploads/                        # User uploaded files
+    ├── temp/                           # Temporary files
+    └── cache/                          # Cache files
+```
+
+## 📂 Directory Descriptions
+
+### Core Application (`src/`)
+Contains all the source code for the application including models, API, services, and utilities.
+
+### Models (`src/models/`)
+- **waste_classifier.py**: MobileNetV2-based CNN for classifying waste materials
+- **structure_generator.py**: cGAN for generating farming structure designs
+- **plant_recommender.py**: Hoeffding tree for intelligent plant recommendations
+- **weather_predictor.py**: Weather-based prediction and adaptation
+
+### API (`src/api/`)
+Flask-based REST API that serves the mobile application and handles all backend requests.
+
+### Testing (`tests/`)
+Comprehensive test suite using pytest with fixtures and mock data.
+
+### Data (`data/`)
+Training data, processed datasets, and external data sources.
+
+### Models (`models/`)
+Trained and saved model files in various formats (H5, PTH, PKL).
+
+### Documentation (`docs/`)
+Complete documentation including API docs, user guides, and developer guides.
+
+### Scripts (`scripts/`)
+Utility scripts for training, deployment, and maintenance.
+
+### Android (`android/`)
+Native Android application built with Android Studio.
+
+## 🔄 Data Flow
+
+```
+User Upload → API → Preprocessing → Classification → Recommendation → Response
+     ↓                                      ↓              ↓
+  Storage                              Weather API    Plant Database
+```
+
+## 🛠️ Development Workflow
+
+1. **Local Development**: Work in `src/` with hot-reload
+2. **Testing**: Run tests from `tests/` directory
+3. **Notebooks**: Experiment in `notebooks/`
+4. **Documentation**: Update `docs/` as you develop
+5. **Deployment**: Use scripts in `deployment/`
+
+## 📋 File Naming Conventions
+
+- **Python files**: `snake_case.py`
+- **Classes**: `PascalCase`
+- **Functions**: `snake_case()`
+- **Constants**: `UPPER_CASE`
+- **Test files**: `test_*.py`
+
+## 🚀 Getting Started
+
+1. Clone the repository
+2. Install dependencies: `pip install -r requirements.txt`
+3. Set up environment: `cp .env.example .env`
+4. Run tests: `pytest tests/`
+5. Start API: `python src/api/app.py`
+6. Start Android: Open `android/` in Android Studio
+
+---
+
+**Team InnoVFour**  
+Dr. N.G.P. Institute of Technology
