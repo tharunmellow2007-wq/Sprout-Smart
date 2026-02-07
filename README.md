@@ -1,4 +1,4 @@
-🌱 SproutSmart - AI-Powered Waste Upcycling for Urban Farming
+🌱 **SproutSmart - AI-Powered Waste Upcycling for Urban Farming**
 
 Prototype Link : https://youtu.be/YZZ1hepnPMA?si=efPTEcUqQXEm7Z0B
 
@@ -7,7 +7,8 @@ Presentation Link :
 User Review Link :
 
 
-🎯 Problem Statement
+🎯 **Problem Statement**
+
 Home farming and gardening are rising lifestyle trends, but several challenges prevent widespread adoption:
 
 🏙️ Space & Time Constraints: Urban residents lack adequate space and time for traditional farming
@@ -17,44 +18,47 @@ Home farming and gardening are rising lifestyle trends, but several challenges p
 ♻️ Waste Management: No integrated solution for upcycling household waste into farming resources
 
 
-💡 Our Solution
+**💡 Our Solution**
+
 SproutSmart combines waste upcycling with affordable farming methods through an intelligent, prompt-free AI interface.
 Core Concept: "Restructuring Through Upcycling"
 Converting common household waste into functional farming units with simple, practical methods.
 Key Features
-✨ Waste-to-Farm Pipeline
+
+**✨ Waste-to-Farm Pipeline**
 
 Upload images of waste materials (bottles, containers, plastic items)
 AI identifies and estimates size/structure
 Generates practical designs for soil-based, hydroponic, and aeroponic setups
 
-🌿 Smart Plant Recommendations
+**🌿 Smart Plant Recommendations**
 
 Auto-suggests plants based on waste size, weather, climate, and region
 No prompts needed - intelligent shortlisting using Hoeffding tree
 Considers herbs, vegetables, and decorative plants
 
-🧪 Organic Liquid Manure Creation
+**🧪 Organic Liquid Manure Creation**
 
 Uses only kitchen scraps - no external purchases needed
 Simple preparation: container + water + organic waste + lid
 Example: 1 spoon of used tea powder = 1L manure (worth ₹500+ in market)
 
-🐛 Natural Pest Control
+**🐛 Natural Pest Control**
 
 Organic pesticide preparation from kitchen waste
 Goes beyond disease identification to provide actual cures
 No chemical purchases required
 
-🌤️ Weather-Aware Intelligence
+**🌤️ Weather-Aware Intelligence**
 
 Real-time climate data integration
 Region-specific planting suggestions
 Prevents crop failure with adaptive guidance
 
-🗣️ Accessible Interface
+**🗣️ Accessible Interface**
 
-AI & ML Components
+**AI & ML Components**
+
 1. Image Processing Pipeline
 
 CNN (MobileNetV2): Lightweight model for waste classification
@@ -81,7 +85,8 @@ Multi-language interface: Local language support
 Voice controls: Accessibility-first design
 
 
-🚀 Implementation Plan
+**🚀 Implementation Plan**
+
 Phase 1 - MVP (Minimum Viable Product)
 
  Waste image classification
@@ -108,20 +113,21 @@ Phase 3 - Scalable Ecosystem
  Community & institutional versions
 
 
-📊 Impact & Benefits
-🍃 Environmental Impact
+**📊 Impact & Benefits**
+
+**🍃 Environmental Impact**
 
 Waste Reduction: Upcycles household plastic waste into farming structures
 Sustainability: Promotes circular economy and reduces urban waste
 Organic Farming: Chemical-free manure and pesticide alternatives
 
-💰 Economic Benefits
+**💰 Economic Benefits**
 
 Cost Savings: Reduces farming investment by 30-70%
 Market Comparison: Hydroponics/Aeroponics setup - ₹4,000+ → ₹0 (using waste)
 Micro-entrepreneurship: Enables small-scale urban farming for sale
 
-🏘️ Social Impact
+**🏘️ Social Impact**
 
 Food Security: Fresh herbs and vegetables at minimal cost
 Accessibility: No prior farming knowledge required
@@ -129,7 +135,8 @@ Community Building: Connect with other urban farmers
 Education: Sustainability education in schools and colleges
 
 
-🎯 Target Audience
+**🎯 Target Audience**
+
 According to Farmonaut, 63-68% of India's urban growers use recyclable waste for planting. Our target includes:
 
 🏢 Urban households and apartment residents
@@ -140,10 +147,12 @@ According to Farmonaut, 63-68% of India's urban growers use recyclable waste for
 🚀 Urban farming startups
 
 
-🔬 Innovation Quotient
+**🔬 Innovation Quotient**
+
 FeatureExisting SystemsSproutSmartWaste IntegrationFocus only on plant care OR waste management separatelyIntegrates waste upcycling with urban farmingUser InteractionRequire manual prompts or inputsPrompt-free guidance, easy for all usersAI CapabilityLimited to plant identification or static tipsComputer Vision (CNN) + context-aware recommendations (waste + plant + climate)Stage-wise SupportGeneral care tips, not step-specificStage-wise assistance + timely reminders (setup → planting → care → harvest)Weather AwarenessRarely consider climate conditionsReal-time weather data integrationAccessibilityText-heavy, English-only appsMulti-lingual + voice-first support
 
-💻 Technical Stack
+**💻 Technical Stack**
+
 Machine Learning
 
 TensorFlow - Model training and deployment
@@ -169,7 +178,8 @@ RNN (Sequence Model) - Language processing
 Voice Recognition - Hands-free controls
 
 
-📱 How It Works
+**📱 How It Works**
+
 Step 1: Upload Waste Material
 📸 Take photo of waste → AI estimates size & structure
 Step 2: Get Design Suggestions
@@ -192,7 +202,8 @@ Step 5: Ongoing Support
 🌡️ Adaptive care instructions
 👥 Community support
 
-📈 Market Feasibility
+**📈 Market Feasibility**
+
 Growing Market
 
 📊 Indian hydroponics market growing at 15%+ CAGR
@@ -232,7 +243,7 @@ Android Studio - Mobile interface development
 NLP Tools - Multi-language and voice support
 
 
-👥 Project Contibutors
+**👥 Project Contibutors**
 
 Lead : Tharun M - 8667642113
 Members : Sabari D 
@@ -241,16 +252,18 @@ Members : Sabari D
           Niranjanaa A
 Mentor : Mrs. Preethi.S
 
-🎥 Media & Demos
+**🎥 Media & Demos**
 
 📺 Product Demo Video - Complete walkthrough of SproutSmart
 💬 User Reviews - Real user feedback and testimonials
 
 
-📝 License
+**📝 License**
+
 This project is created by Team InnoVFour for sustainable urban farming education and implementation.
 
-🤝 Contributing
+**🤝 Contributing**
+
 We welcome contributions from the community! Whether it's:
 
 🐛 Bug reports
@@ -260,12 +273,13 @@ We welcome contributions from the community! Whether it's:
 
 Please feel free to reach out to our team.
 
-📧 Contact
+**📧 Contact**
+
 For inquiries, partnerships, or feedback:
 
 Team Lead: Tharun M - 8667642113
 
-🌟 Join the Movement
+**🌟 Join the Movement**
 
 "Converting waste into valuable plantation for urban and small-scale farmers"
 
