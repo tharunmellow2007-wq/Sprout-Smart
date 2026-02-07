@@ -1,6 +1,6 @@
 🌱 **SproutSmart - AI-Powered Waste Upcycling for Urban Farming**
 
-Prototype Link : https://youtu.be/YZZ1hepnPMA?si=efPTEcUqQXEm7Z0B
+Prototype Link : [https://youtu.be/YZZ1hepnPMA?si=efPTEcUqQXEm7Z0B](https://youtu.be/koX0eMLD9B4?si=LydobQ-7P73xCSSG)
 
 Presentation Link :
 
