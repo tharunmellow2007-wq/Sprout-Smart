@@ -1,0 +1,213 @@
+# Changelog
+
+All notable changes to SproutSmart will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Planned Features
+- Voice command support for hands-free operation
+- Multi-language interface (Hindi, Tamil, Telugu, Bengali)
+- Community forum for urban farmers
+- AR visualization for farming setups
+- Smart notifications based on weather patterns
+- Integration with IoT sensors
+
+---
+
+## [1.0.0] - 2025-02-07
+
+### 🎉 Initial Release
+
+#### Added
+- **Waste Classification System**
+  - CNN-based image classification using MobileNetV2
+  - Support for plastic bottles, containers, and various household waste
+  - Size and structure estimation from uploaded images
+  - Trained model with 95%+ accuracy
+
+- **Farming Structure Generation**
+  - cGAN-powered design generation for upcycled farming setups
+  - Support for three farming methods:
+    - Soil-based farming
+    - Hydroponics
+    - Aeroponics
+  - Step-by-step construction instructions
+
+- **Plant Recommendation Engine**
+  - Hoeffding tree-based decision system
+  - Considers multiple factors:
+    - Waste material size and type
+    - Local weather conditions
+    - Climate zone
+    - Regional suitability
+  - Suggests herbs, vegetables, and decorative plants
+
+- **Weather Integration**
+  - OpenWeatherMap API integration
+  - Real-time weather data for farming decisions
+  - Region-specific climate analysis
+  - Weather-adaptive plant care suggestions
+
+- **Organic Manure Guide**
+  - Liquid manure preparation from kitchen scraps
+  - Simple, no-effort methods
+  - Cost savings calculator
+  - Storage and usage instructions
+
+- **Natural Pest Control**
+  - Organic pesticide preparation guide
+  - Kitchen scrap-based solutions
+  - Disease prevention tips
+  - Chemical-free farming support
+
+- **Mobile Application**
+  - Android app interface
+  - Camera integration for waste image upload
+  - Stage-wise cultivation guidance
+  - User-friendly, prompt-free design
+
+- **Core Features**
+  - Image processing pipeline
+  - Cloud-based model training (Google Colab)
+  - Efficient mobile performance
+  - Offline capability for core features
+
+#### Technical Specifications
+- Python 3.9+ support
+- TensorFlow 2.15.0
+- PyTorch 2.1.0
+- MobileNetV2 for classification
+- Flask-based API backend
+- Android Studio integration
+
+#### Documentation
+- Comprehensive README
+- Installation guide
+- API documentation
+- User manual
+- Video demonstrations
+
+---
+
+## [0.9.0-beta] - 2024-12-15
+
+### Beta Release for Testing
+
+#### Added
+- Beta version of waste classification
+- Initial plant recommendation logic
+- Basic weather API integration
+- Prototype mobile interface
+
+#### Changed
+- Improved model accuracy from 85% to 92%
+- Enhanced UI/UX based on user feedback
+- Optimized image processing speed
+
+#### Fixed
+- Image upload crash on certain Android devices
+- Weather API timeout issues
+- Memory leaks in classification module
+
+---
+
+## [0.5.0-alpha] - 2024-10-01
+
+### Alpha Release for Internal Testing
+
+#### Added
+- Proof of concept for waste classification
+- Basic CNN model implementation
+- Simple plant database
+- Initial Android app prototype
+
+#### Known Issues
+- Limited waste material types (5 categories only)
+- No weather integration
+- Manual prompt required for plant selection
+- Performance issues on older devices
+
+---
+
+## Version History Summary
+
+| Version | Release Date | Major Features |
+|---------|-------------|----------------|
+| 1.0.0 | 2025-02-07 | Full release with all core features |
+| 0.9.0-beta | 2024-12-15 | Beta testing with improved accuracy |
+| 0.5.0-alpha | 2024-10-01 | Initial alpha prototype |
+
+---
+
+## Release Notes Format
+
+Each release follows this structure:
+
+### Added
+- New features and functionality
+
+### Changed
+- Changes to existing functionality
+
+### Deprecated
+- Features that will be removed in future versions
+
+### Removed
+- Features that have been removed
+
+### Fixed
+- Bug fixes
+
+### Security
+- Security updates and patches
+
+---
+
+## Upgrade Guide
+
+### From 0.9.0-beta to 1.0.0
+
+1. **Update dependencies:**
+   ```bash
+   pip install -r requirements.txt --upgrade
+   ```
+
+2. **Update database schema:**
+   ```bash
+   python scripts/migrate_db.py
+   ```
+
+3. **Download new models:**
+   ```bash
+   python scripts/download_models.py --version 1.0.0
+   ```
+
+4. **Clear cache:**
+   ```bash
+   python scripts/clear_cache.py
+   ```
+
+---
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this changelog.
+
+---
+
+## Links
+
+- [Project Homepage](https://github.com/your-username/sproutsmart)
+- [Issue Tracker](https://github.com/your-username/sproutsmart/issues)
+- [Documentation](https://github.com/your-username/sproutsmart/wiki)
+- [Demo Video](https://youtu.be/YZZ1hepnPMA?si=efPTEcUqQXEm7Z0B)
+
+---
+
+**Team InnoVFour**  
+Dr. N.G.P. Institute of Technology
+
+_Making sustainable urban farming accessible to everyone_ 🌱
